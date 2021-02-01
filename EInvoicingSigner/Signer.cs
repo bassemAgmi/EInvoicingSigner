@@ -17,6 +17,7 @@ public class TokenSigner
     {
     private readonly string DllLibPath = "eps2003csp11.dll";
     private string TokenPin = "58446674";
+    private string TokenCertificate = "Egypt Trust Sealing CA";
 
     public static void Main(String[] args)
     {
@@ -35,6 +36,8 @@ public class TokenSigner
         {
             if (args.Length == 2)
                 tokenSigner.TokenPin = args[1];
+            if (args.Length == 3)
+                tokenSigner.TokenCertificate = args[2];
 
             if (File.Exists(args[0] + @"\SourceDocumentJson.json") == false)
             {
@@ -136,7 +139,7 @@ public class TokenSigner
                     store.Open(OpenFlags.MaxAllowed);
 
                 // find cert by thumbprint
-                var foundCerts = store.Certificates.Find(X509FindType.FindByIssuerName, "Egypt Trust Sealing CA", false);
+                var foundCerts = store.Certificates.Find(X509FindType.FindByIssuerName, TokenCertificate, false);
 
                 //var foundCerts = store.Certificates.Find(X509FindType.FindBySerialNumber, "2b1cdda84ace68813284519b5fb540c2", true);
 
