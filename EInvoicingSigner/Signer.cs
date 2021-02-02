@@ -29,15 +29,23 @@ public class TokenSigner
             Console.WriteLine("Help.");
             Console.WriteLine("First argument is the folder path.");
             Console.WriteLine("Second argument is the token pin.");
+            Console.WriteLine("Third argument is the certificate issuer.");
 
 
         }
         else
         {
-            if (args.Length == 2)
+            Console.WriteLine("First argument "+ args[0]);
+            if (args.Length >= 2)
+            {
+                Console.WriteLine("Second argument " + args[1]);
                 tokenSigner.TokenPin = args[1];
-            if (args.Length == 3)
+            }
+            if (args.Length >= 3)
+            {
+                Console.WriteLine("Third argument " + args[2]);
                 tokenSigner.TokenCertificate = args[2];
+            }
 
             if (File.Exists(args[0] + @"\SourceDocumentJson.json") == false)
             {
