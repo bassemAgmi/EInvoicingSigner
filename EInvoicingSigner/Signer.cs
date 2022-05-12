@@ -234,6 +234,11 @@ public class TokenSigner
                     }
                 }
             }
+            // Added to fix "References"
+            if (request.Type == JTokenType.String)
+            {
+                serialized += JsonConvert.ToString(request.Value<string>());
+            }
         }
         if (request.Type == JTokenType.Object)
         {
