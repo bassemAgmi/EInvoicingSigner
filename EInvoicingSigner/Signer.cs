@@ -15,9 +15,9 @@ using Newtonsoft.Json;
 
 public class TokenSigner
     {
-    private readonly string DllLibPath = "eps2003csp11.dll";
+    private readonly string DllLibPath = "eps2003csp11.dll"; // Use "aetpkss1.dll" For G&D StarSign
     private string TokenPin = "999999999";
-    private string TokenCertificate = "Egypt Trust Sealing CA";
+    private string TokenCertificate = "Egypt Trust Sealing CA"; // Use "MCDR CA" For Misr Clearing Company Certificate 
 
     public static void Main(String[] args)
     {
