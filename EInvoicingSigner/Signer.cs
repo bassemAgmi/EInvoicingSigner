@@ -238,7 +238,7 @@ public class TokenSigner
             // To fix Receipt float & Integer arrays
             if ((request.Type == JTokenType.String) || (request.Type == JTokenType.Float) || (request.Type == JTokenType.Integer))
             {
-                serialized.Append(JsonConvert.ToString(request.Value<string>()));
+                serialized+=JsonConvert.ToString(request.Value<string>());
             }
         }
         if (request.Type == JTokenType.Object)
