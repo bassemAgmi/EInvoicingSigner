@@ -218,7 +218,14 @@ public class TokenSigner
                     }
                     if (property.Type == JTokenType.Boolean || property.Type == JTokenType.Integer || property.Type == JTokenType.Float || property.Type == JTokenType.Date)
                     {
-                        serialized += "\"" + property.Value<string>() + "\"";
+                        if (property.Value<string>() == "0")
+                        {
+                            serialized += "\"" + property.Value<string>() + ".0\"";
+                        }
+                        else
+                        {
+                            serialized += "\"" + property.Value<string>() + "\"";
+                        }
                     }
                     if(property.Type == JTokenType.String)
                     {
