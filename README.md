@@ -12,5 +12,5 @@ The application takes three arguments
 2. Extract to a folder like D:\EInvoicing
 3. Update the file SubmitInvoices.bat by your token PIN and application folder path
 4. Update the file SourceDocumentJson.json with your invoice JSON.
-5. Run the file SubmitInvoices.bat
+5. Run the file SubmitInvoices.bat or SubmitInvoicesNewToken2024.bat
 6. Take the content of FullSignedDocument.json and send it to "Egyptian Tax Authority" using any tool like Postman.
