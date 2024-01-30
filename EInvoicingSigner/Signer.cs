@@ -29,7 +29,7 @@ public class TokenSigner
             tokenSigner.ListCertificates();
 
             Console.WriteLine("Help.");
-            Console.WriteLine("First argument is the folder path. For example, d:\\einvoice");
+            Console.WriteLine("First argument is the folder path. For example, d:\\EInvoicing");
             Console.WriteLine("Second argument is the token pin.");
             Console.WriteLine("Third argument is the certificate issuer. For example \"Egypt Trust Sealing CA\" or \"Egypt Trust CA G6\" ");
             Console.WriteLine("Fourth argument is the library  name. For example eps2003csp11.dll or SignatureP11.dll");
