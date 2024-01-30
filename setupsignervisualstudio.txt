@@ -1,0 +1,3 @@
+instal visual studio 2019
+install sdk 5 dotnet-sdk-5.0.408-win-x64
+open the project file

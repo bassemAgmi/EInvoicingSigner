@@ -15,9 +15,11 @@ using Newtonsoft.Json;
 
 public class TokenSigner
     {
-    private readonly string DllLibPath = "eps2003csp11.dll";
+    private string dllLibPath = "eps2003csp11.dll";
     private string TokenPin = "999999999";
     private string TokenCertificate = "Egypt Trust Sealing CA";
+
+    public string DllLibPath { get => dllLibPath; set => dllLibPath = value; }
 
     public static void Main(String[] args)
     {
@@ -27,9 +29,10 @@ public class TokenSigner
             tokenSigner.ListCertificates();
 
             Console.WriteLine("Help.");
-            Console.WriteLine("First argument is the folder path.");
+            Console.WriteLine("First argument is the folder path. For example, d:\\einvoice");
             Console.WriteLine("Second argument is the token pin.");
-            Console.WriteLine("Third argument is the certificate issuer.");
+            Console.WriteLine("Third argument is the certificate issuer. For example \"Egypt Trust Sealing CA\" or \"Egypt Trust CA G6\" ");
+            Console.WriteLine("Fourth argument is the library  name. For example eps2003csp11.dll or SignatureP11.dll");
 
 
         }
@@ -45,6 +48,12 @@ public class TokenSigner
             {
                 Console.WriteLine("Third argument " + args[2]);
                 tokenSigner.TokenCertificate = args[2];
+            }
+            if (args.Length >= 4)
+            {
+                Console.WriteLine("Fourth argument " + args[3]);
+                tokenSigner.DllLibPath = args[3];
+
             }
 
             if (File.Exists(args[0] + @"\SourceDocumentJson.json") == false)
