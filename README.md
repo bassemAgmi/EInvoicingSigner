@@ -3,9 +3,10 @@ A command prompt application used to serialize and sign tax payers documents bef
 This application has been developed to help in tracing signing documents issues. You can compare the generated canonical format, cades, and the full signed document with your generated version. Plus, you can use this tool from any progaming language C#, JAVA, or directly from database. All you need is writting the invoice JSON file, invoking the command prompt application, reading the signed invoice json, and sending it to "Egyptian Tax Authority".
 
 The application takes three arguments
-  * First argument is the application folder path
+  * First argument is the application folder path. For example D:\EInvoicing
   * Second argument is the token pin.
-  * Third argument is the certificate issuer. The default value for this argument is "Egypt Trust Sealing CA"
+  * Third argument is the certificate issuer. The default value for this argument is "Egypt Trust Sealing CA". For example \"Egypt Trust Sealing CA\" or \"Egypt Trust CA G6\"
+  * Fourth argument is the library  name. For example eps2003csp11.dll or SignatureP11.dll
 # How to use
 1. Download the runtime version from https://drive.google.com/file/d/1jfkC_qfU56BSawRL4TcBrOssNudhcgTX/view?usp=sharing
 2. Extract to a folder like D:\EInvoicing
