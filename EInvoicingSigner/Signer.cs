@@ -243,8 +243,9 @@ public class TokenSigner
                     }
                 }
             }
-            // Added to fix "References"
-            if (request.Type == JTokenType.String)
+            // To fix "References"
+            // To fix Receipt float & Integer arrays
+            if ((request.Type == JTokenType.String) || (request.Type == JTokenType.Float) || (request.Type == JTokenType.Integer))
             {
                 serialized += JsonConvert.ToString(request.Value<string>());
             }
